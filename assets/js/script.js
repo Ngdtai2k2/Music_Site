@@ -34,6 +34,7 @@
   const audio = new Audio();
   audio.src = playlist[0].url;
 
+
   // Define the play and pause buttons and add event listeners
   // Define the play/pause button and add event listener
   const playPauseButton = document.getElementById("playpause");
