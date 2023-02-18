@@ -47,3 +47,4 @@
       playPauseButton.innerHTML = "Play";
     }
   });
+

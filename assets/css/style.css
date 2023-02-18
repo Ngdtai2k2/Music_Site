@@ -158,3 +158,25 @@ li:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
 }
+
+.header input{
+ float: right;
+ background-color:#fff;
+}
+
+.slider {
+  appearance: none;
+  width: 100px;
+  height: 2px;
+  outline: none;
+  border-radius: 0.25rem;
+}
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #575757;
+  border: 0.25rem solid #fff;
+  border-radius: 1rem;
+  cursor: pointer;
+}

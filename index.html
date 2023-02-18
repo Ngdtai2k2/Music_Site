@@ -9,25 +9,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Chill With Me</title>
 </head>
 
-<body style=" background-image: url('assets/img/gif1.gif');background-repeat: no-repeat;background-size: cover;">
+<body style=" background-image: url('assets/img/gif4.gif');background-repeat: no-repeat;background-size: cover;">
 
     <div class="wrapper">
         <!-- change background -->
         <div class="header">
-            <button class="cta" onclick="changeBackground()">
-                <span class="hover-underline-animation"> Change background</span>
-            </button>
+                <button class="cta" onclick="changeBackground()">
+                    <span class="hover-underline-animation"> Change background</span>
+                </button>
+                <input class="slider" type="range" min="0" max="100" step="1" value="80">
         </div>
         <!-- Playlist -->
         <div class="sidebar">
             <div id="playlist">
-                <h2>Playlist</h2>
+                <h2>Playlist Lofi</h2>
                 <hr>
                 <ul id="songs">
                     <!-- This is where the songs will be displayed -->
@@ -36,19 +39,21 @@
         </div>
         <!-- main content -->
         <div class="content">
-            <canvas id="waveform"></canvas>
+
         </div>
         <!-- controls music -->
         <div class="footer">
             <div id="controls">
-                <button id="playpause"> Play</button>
+                <button id="playpause">Play</button>
+
             </div>
-        <div>
-            <h6>@ngdtai2k2</h6>
-        </div>
+            <div>
+                <h6>@ngdtai2k2</h6>
+            </div>
         </div>
     </div>
     <!-- script -->
+
     <script>
         var backgrounds = [
             'assets/img/gif1.gif',
@@ -60,9 +65,17 @@
             var body = document.querySelector("body");
             var randomIndex = Math.floor(Math.random() * backgrounds.length);
             body.style.backgroundImage = "url('" + backgrounds[randomIndex] + "')";
-        }
+        };
+        var rangeInput = document.querySelector('input[type="range"]');
+
+        rangeInput.addEventListener('input', function () {
+            var currentValue = rangeInput.value;
+            audio.volume = currentValue / 100;
+        })
     </script>
+
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
