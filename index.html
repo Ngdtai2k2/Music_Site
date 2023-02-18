@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font gg -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Chill With Me</title>
+</head>
+
+<body style=" background-image: url('assets/img/gif1.gif');background-repeat: no-repeat;background-size: cover;">
+
+    <div class="wrapper">
+        <!-- change background -->
+        <div class="header">
+            <button class="cta" onclick="changeBackground()">
+                <span class="hover-underline-animation"> Change background</span>
+            </button>
+        </div>
+        <!-- Playlist -->
+        <div class="sidebar">
+            <div id="playlist">
+                <h2>Playlist</h2>
+                <hr>
+                <ul id="songs">
+                    <!-- This is where the songs will be displayed -->
+                </ul>
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="content">
+        </div>
+        <!-- controls music -->
+        <div class="footer">
+            <div id="controls">
+                <button id="playpause" > Play</button>
+            </div>
+        <div>
+            <h6>@ngdtai2k2</h6>
+        </div>
+        </div>
+    </div>
+    <!-- script -->
+    <script>
+        var backgrounds = [
+            'assets/img/gif1.gif',
+            'assets/img/gif2.gif',
+            'assets/img/gif3.gif',
+            'assets/img/gif4.gif'
+        ];
+        function changeBackground() {
+            var body = document.querySelector("body");
+            var randomIndex = Math.floor(Math.random() * backgrounds.length);
+            body.style.backgroundImage = "url('" + backgrounds[randomIndex] + "')";
+        }
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

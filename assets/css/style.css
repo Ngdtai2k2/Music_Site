@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Shantell Sans', cursive;
+  margin: 0;
+  padding: 0;
+}
+/* css grid layout */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+}
+
+.content {
+  grid-area: content;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+/* button change bg */
+.cta {
+  border: none;
+  background: none;
+}
+
+.cta span {
+  font-family: 'Shantell Sans', cursive;
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* ...................... */
+/* play music */
+h1,
+h2 {
+  text-align: center;
+}
+
+#playlist,
+#controls {
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px;
+}
+
+#playlist {
+  width: 300px;
+
+}
+
+#playlist h2 {
+  padding: 10px;
+  color: #fff;
+  text-align: left;
+}
+
+#controls {
+  width: 100px;
+  text-align: center;
+}
+
+#songs {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform .2s;
+  overflow: value;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+#playpause {
+  font-family: 'Shantell Sans', cursive;
+  font-size: 30px;
+  border: none;
+  background-color: #ffffff00;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#playpause:hover {
+  background-color: #0057b300;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+}
