@@ -9,7 +9,13 @@ const playlist = [
     title: "Lofi chill 30 minutes",
     artist: "Various Artists",
     url: "assets/songs/chill2.mp3"
-  }, {
+  },  
+  {
+    title: "1 Hours Study",
+    artist: "Piano",
+    url: "assets/songs/onehour.mp3"
+  },
+  {
     title: "Playlist",
     artist: "Studio Ghibli",
     url: "assets/songs/STUDIOGHIBLI.mp3"
