@@ -15,7 +15,7 @@
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>StudyWithMe</title>
-    <link rel="shortcut icon" type="image/png" href="assets/img/favation.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favation.png" />
 </head>
 
 <body style=" background-image: url('assets/img/gif3.gif');background-repeat: no-repeat;background-size: cover;">
@@ -32,6 +32,14 @@
             <button id="fullscreen-btn">
                 <i class="fa-solid fa-expand"></i>
             </button>
+
+            <label class="switch" for="toggle-widget">
+                <input type="checkbox" id="toggle-widget">
+                <span class="slider">
+                    <span class="circle"></span>
+                </span>
+            </label>
+            
         </div>
         <!-- Playlist -->
         <div class="sidebar">
@@ -41,27 +49,46 @@
                     <hr>
                     <!-- This is where the songs will be displayed -->
                 </ul>
+                <div id="controls">
+                        <button id="playpause">Play</button>
+                </div><h6 style="color: #fff;">@ngdtai2k2 with love</h6>
+                    
             </div>
         </div>
+
         <!-- main content -->
         <div class="content">
-            <div class="box_content">
-                <div id="content"></div><br>
+            <div class="container">
+                <div class="col1">
+                    <div id="content"></div><br>
+                </div>
+                <div class="col2">
+                    <div class="weather-widget">
+                        <div class="row_location">
+                            <span class="location"></span>
+                        </div>
+                        <div class="row_icon">
+                            <span class="weather-icon"></span>
+                        </div>
+                        <div class="row_temper">
+                            <span class="temperature"></span>
+                        </div>
+                        <div class="row_des">
+                            <span class="description"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
         </div>
-        <!-- controls music -->
-        <div class="footer">
-            <div id="controls">
-                <button id="playpause">Play</button>
-            </div>
-            <div>
-                <h6>@ngdtai2k2 with love</h6>
-            </div>
-        </div>
+        
+    </div>
+    <!-- controls music -->
+    <div class="footer">
+    </div>
     </div>
     <!-- script -->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script>
         // change bg
         var backgrounds = [
@@ -86,11 +113,10 @@
                 document.documentElement.requestFullscreen();
             }
         });
-
     </script>
     <script src="assets/js/clock.js"></script>
     <script src="assets/js/script.js"></script>
-
+    <script src="assets/js/weather.js"></script>
 </body>
 
 </html>
