@@ -14,10 +14,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Chill With Me</title>
+    <title>StudyWithMe</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favation.png"/>
 </head>
 
-<body style=" background-image: url('assets/img/gif4.gif');background-repeat: no-repeat;background-size: cover;">
+<body style=" background-image: url('assets/img/gif3.gif');background-repeat: no-repeat;background-size: cover;">
 
     <div class="wrapper">
         <!-- change background -->
@@ -25,19 +26,18 @@
             <button class="cta" onclick="changeBackground()">
                 <span class="hover-underline-animation"> Change background</span>
             </button>
-            <a href="#"></a>
-            <a href="#"></a>
             <div id="clock-widget">
-                <span id="time"></span>
+                <div id="clock">00:00</div>
             </div>
-            <button id="fullscreen-btn"><i class="fa-solid fa-expand"></i></button>
-
+            <button id="fullscreen-btn">
+                <i class="fa-solid fa-expand"></i>
+            </button>
         </div>
         <!-- Playlist -->
         <div class="sidebar">
             <div id="playlist">
                 <ul id="songs">
-                    <h2>Playlist Lofi</h2>
+                    <h2 style="text-align: center;">Playlist Lofi</h2>
                     <hr>
                     <!-- This is where the songs will be displayed -->
                 </ul>
@@ -45,22 +45,25 @@
         </div>
         <!-- main content -->
         <div class="content">
-
+            <div class="box_content">
+                <div id="content"></div><br>
+            </div>
+            
         </div>
         <!-- controls music -->
         <div class="footer">
             <div id="controls">
                 <button id="playpause">Play</button>
-
             </div>
             <div>
-                <h6>@ngdtai2k2</h6>
+                <h6>@ngdtai2k2 with love</h6>
             </div>
         </div>
     </div>
     <!-- script -->
 
     <script>
+        // change bg
         var backgrounds = [
             'assets/img/gif1.gif',
             'assets/img/gif2.gif',
@@ -73,19 +76,7 @@
             body.style.backgroundImage = "url('" + backgrounds[randomIndex] + "')";
         };
 
-        function updateTime() {
-            var now = new Date();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var ampm = hours >= 12 ? 'PM' : 'AM'; // Xác định AM hoặc PM
-            hours = hours % 12;
-            hours = hours ? hours : 12; // Chuyển đổi giờ 0 thành 12
-            var timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
-            document.getElementById('time').innerHTML = timeString;
-        }
-        updateTime();
-        setInterval(updateTime, 1000);
-
+        // Fullscreen
         const fullscreenBtn = document.getElementById('fullscreen-btn');
 
         fullscreenBtn.addEventListener('click', () => {
@@ -97,7 +88,7 @@
         });
 
     </script>
-
+    <script src="assets/js/clock.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
