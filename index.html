@@ -22,17 +22,23 @@
     <div class="wrapper">
         <!-- change background -->
         <div class="header">
-                <button class="cta" onclick="changeBackground()">
-                    <span class="hover-underline-animation"> Change background</span>
-                </button>
-                <input class="slider" type="range" min="0" max="100" step="1" value="80">
+            <button class="cta" onclick="changeBackground()">
+                <span class="hover-underline-animation"> Change background</span>
+            </button>
+            <a href="#"></a>
+            <a href="#"></a>
+            <div id="clock-widget">
+                <span id="time"></span>
+            </div>
+            <button id="fullscreen-btn"><i class="fa-solid fa-expand"></i></button>
+
         </div>
         <!-- Playlist -->
         <div class="sidebar">
             <div id="playlist">
-                <h2>Playlist Lofi</h2>
-                <hr>
                 <ul id="songs">
+                    <h2>Playlist Lofi</h2>
+                    <hr>
                     <!-- This is where the songs will be displayed -->
                 </ul>
             </div>
@@ -66,12 +72,30 @@
             var randomIndex = Math.floor(Math.random() * backgrounds.length);
             body.style.backgroundImage = "url('" + backgrounds[randomIndex] + "')";
         };
-        var rangeInput = document.querySelector('input[type="range"]');
 
-        rangeInput.addEventListener('input', function () {
-            var currentValue = rangeInput.value;
-            audio.volume = currentValue / 100;
-        })
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM'; // Xác định AM hoặc PM
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Chuyển đổi giờ 0 thành 12
+            var timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
+            document.getElementById('time').innerHTML = timeString;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.documentElement.requestFullscreen();
+            }
+        });
+
     </script>
 
     <script src="assets/js/script.js"></script>

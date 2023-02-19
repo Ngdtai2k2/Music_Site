@@ -10,6 +10,29 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#clock-widget {
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding: 10px;
+  background-color: #0000005b;
+  border-radius: 10px;
+}
+
+#fullscreen-btn{
+  display: inline-block;
+  border: none;
+  background: none;
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #0000005b;
+  border-radius: 10px;
+}
 /* css grid layout */
 .wrapper {
   display: grid;
@@ -26,6 +49,7 @@ body {
   grid-area: header;
   color: white;
   padding: 20px;
+  padding-left: 41px;
 }
 
 .sidebar {
@@ -51,12 +75,14 @@ body {
 }
 
 .cta span {
+  font-weight: bold;
   font-family: 'Shantell Sans', cursive;
-  padding-bottom: 7px;
   letter-spacing: 4px;
   font-size: 14px;
-  padding-right: 15px;
+  padding: 10px;
   text-transform: uppercase;
+  background-color: #0000005b;
+  border-radius: 10px;
 }
 
 .cta svg {
@@ -128,6 +154,14 @@ h2 {
 #songs {
   list-style-type: none;
   padding: 0;
+  font-weight: bold;
+  font-family: 'Shantell Sans', cursive;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: #0000005b;
+  border-radius: 10px;
 }
 
 li {
