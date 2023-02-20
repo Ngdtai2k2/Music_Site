@@ -20,7 +20,8 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/favation.png" />
 </head>
 
-<body style="background-image: url('assets/img/gif4.gif');background-repeat: no-repeat;background-size: cover;">
+<body
+    style="background-image: url('assets/img/gif4.gif');background-position: center; background-repeat: no-repeat;background-size: cover; height: 100%;">
 
     <div class="wrapper">
         <!-- change background -->
@@ -37,58 +38,30 @@
             <button id="mute">
                 <i class="bi bi-volume-mute"></i>
             </button>
-            <label class="switch" for="toggle-widget">
-                <input type="checkbox" id="toggle-widget">
-                <span class="slider">
-                    <span class="circle"></span>
-                </span>
-            </label>
         </div>
         <!-- Playlist -->
         <div class="sidebar">
             <div id="playlist">
                 <ul id="songs">
-                    <h2 style="text-align: center;">Playlist Lofi</h2>
+                    <h4 style="text-align: center;">Playlist Lofi</h4>
                     <hr>
                 </ul>
                 <input type="range" id="seek-bar" min="0" max="100" value="0"><br>
-                <span id="time-display">0:00 / 0:00</span>
-                <div id="controls">
-                    <button id="playpause"><i class="bi bi-play"></i></button>
-                </div>
-                <h6 style="color: #fff;">@ngdtai2k2 with love</h6>
+                <span id="time-display" style="font-size: 15px;">0:00 / 0:00</span>
             </div>
         </div>
 
         <!-- main content -->
-        <div class="content">
-            <div class="container">
-                <div class="col1">
-                    <div id="content"></div><br>
-                </div>
-                <div class="col2">
-                    <div class="weather-widget">
-                        <div class="row_location">
-                            <span class="location"></span>
-                        </div>
-                        <div class="row_icon">
-                            <span class="weather-icon"></span>
-                        </div>
-                        <div class="row_temper">
-                            <span class="temperature"></span>
-                        </div>
-                        <div class="row_des">
-                            <span class="description"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="main">
+            <div id="content"></div><br>
         </div>
-
     </div>
+
     <!-- controls music -->
     <div class="footer">
-    </div>
+        <div id="controls">
+            <button id="playpause"><i class="bi bi-pause"></i></button>
+        </div>
     </div>
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -121,10 +94,14 @@
                 document.documentElement.requestFullscreen();
             }
         });
+
+        $(function() {
+  $("#content").draggable();
+  $("#playlist").draggable();
+});
     </script>
     <script src="assets/js/clock.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/weather.js"></script>
 </body>
 
 </html>
