@@ -116,6 +116,7 @@ h2 {
 
 #playlist {
   width: 200px;
+  cursor: pointer;
 }
 
 #playlist h4 {
