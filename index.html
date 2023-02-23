@@ -21,7 +21,7 @@
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- favation -->
-    <link rel="shortcut icon" type="image/png" href="assets/img/favation.png" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
     <title>StudyWithMe</title>
 </head>
 
@@ -50,8 +50,19 @@
                 </li>
                 <li class="navbar__item">
                     <button id="mute">
-                        <i class="fa-solid fa-volume-xmark"></i>
+                        <i class="bi bi-volume-mute-fill"></i>
                     </button>
+                </li>
+                <li class="navbar__item">
+                    <div class="content">
+                        <label class="container" for="sound-checkbox">
+                            <input type="checkbox" id="sound-checkbox" type="checkbox">
+                            <div class="checkmark"></div>
+                        </label> <span class="note">Rain City</span>
+                        <audio id="my-audio" loop>
+                            <source src="assets/songs/rain.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
                 </li>
             </ul>
         </nav><!-- end nav -->
@@ -136,6 +147,7 @@
                 fullscreenBtn.innerHTML = '<i class="fa-solid fa-down-left-and-up-right-to-center"></i>';
             }
         });
+
     </script>
     <script src="assets/js/clock.js"></script>
     <script src="assets/js/script.js"></script>

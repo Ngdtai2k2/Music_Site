@@ -1,14 +1,15 @@
 // Define your playlist as an array of objects
 const playlist = [
-  {
-    title: "Music Track",
-    artist: "Tido Kang",
-    url: "assets/songs/3h.mp3"
-  },
+
   {
     title: "Baroque Music",
     artist: "Various Artists",
     url: "assets/songs/baroque.mp3"
+  },
+  {
+    title: "Music Track",
+    artist: "Tido Kang",
+    url: "assets/songs/3h.mp3"
   },
   {
     title: "Lofi chill 30 minutes",
@@ -25,7 +26,7 @@ const playlist = [
     artist: "Studio Ghibli",
     url: "assets/songs/STUDIOGHIBLI.mp3"
   },
-  
+
 ];
 
 // Display the playlist in the HTML
@@ -65,10 +66,11 @@ const muteButton = document.getElementById("mute");
 muteButton.addEventListener("click", () => {
   if (audio.muted) {
     audio.muted = false;
-    muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    muteButton.innerHTML = '<i class="bi bi-volume-mute-fill"></i>';
+
   } else {
     audio.muted = true;
-    muteButton.innerHTML = '<i class="fa-solid fa-volume"></i>';
+    muteButton.innerHTML = '<i class="bi bi-volume-up-fill"></i>';
   }
 });
 
@@ -94,6 +96,18 @@ audio.addEventListener("timeupdate", () => {
 seekBar.addEventListener("input", () => {
   const progress = seekBar.value / 100;
   audio.currentTime = progress * audio.duration;
+});
+
+const soundCheckbox = document.getElementById('sound-checkbox');
+const audio_1 = document.getElementById('my-audio');
+
+soundCheckbox.addEventListener('change', function() {
+  if (this.checked) {
+    audio_1.play();
+  } else {
+    audio_1.pause();
+    audio_1.currentTime = 0;
+  }
 });
 
 
