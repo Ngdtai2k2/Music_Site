@@ -51,10 +51,10 @@ const playPauseButton = document.getElementById("playpause");
 playPauseButton.addEventListener("click", () => {
   if (audio.paused) {
     audio.play();
-    playPauseButton.innerHTML = '<i class="bi bi-pause"></i>';
+    playPauseButton.innerHTML = '<i class="fa-solid fa-pause"></i>';
   } else {
     audio.pause();
-    playPauseButton.innerHTML = '<i class="bi bi-play"></i>';
+    playPauseButton.innerHTML = '<i class="fa-solid fa-play"></i>';
   }
 });
 
@@ -65,10 +65,10 @@ const muteButton = document.getElementById("mute");
 muteButton.addEventListener("click", () => {
   if (audio.muted) {
     audio.muted = false;
-    muteButton.innerHTML = '<i class="bi bi-volume-mute"></i>';
+    muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
   } else {
     audio.muted = true;
-    muteButton.innerHTML = '<i class="bi bi-volume-up"></i>';
+    muteButton.innerHTML = '<i class="fa-solid fa-volume"></i>';
   }
 });
 
